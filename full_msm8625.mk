@@ -3,11 +3,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/k-touch/u86/u86-vendor.mk)
+$(call inherit-product-if-exists, vendor/archos/a45pl/msm8625-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/k-touch/u86/overlay
+DEVICE_PACKAGE_OVERLAYS += device/archos/a45pl/overlay
 
-LOCAL_PATH := device/k-touch/u86
+LOCAL_PATH := device/archos/a45pl
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
@@ -89,11 +89,11 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/k-touch/u86/ramdisk,root)
+    $(call find-copy-subdir-files,*,device/archos/a45pl/ramdisk,root)
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/k-touch/u86/prebuilt/system,system)
+    $(call find-copy-subdir-files,*,device/archos/a45pl/prebuilt/system,system)
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -125,5 +125,5 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_u86
-PRODUCT_DEVICE := u86
+PRODUCT_NAME := full_msm8625
+PRODUCT_DEVICE := msm8625

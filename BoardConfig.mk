@@ -1,6 +1,6 @@
 
 # inherit from the proprietary version
--include vendor/k-touch/u86/BoardConfigVendor.mk
+-include vendor/archos/a45pl/BoardConfigVendor.mk
 
 # Platform
 TARGET_NO_BOOTLOADER := true
@@ -32,15 +32,15 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/k-touch/u86/kernel
-TARGET_KERNEL_SOURCE := kernel/k-touch/msm8x25q
-TARGET_KERNEL_CONFIG := cm_u86_defconfig
+TARGET_PREBUILT_KERNEL := device/archos/a45pl/kernel
+TARGET_KERNEL_SOURCE := kernel/archos/msm8x25q
+TARGET_KERNEL_CONFIG := cm_a45pl_defconfig
 TARGET_BOOTLOADER_BOARD_NAME := qcom
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom loglevel=1 vmalloc=200M
 BOARD_KERNEL_BASE    := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
 
-TARGET_SPECIFIC_HEADER_PATH := device/k-touch/u86/include
+TARGET_SPECIFIC_HEADER_PATH := device/archos/a45pl/include
 
 # Partition sizes
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
@@ -52,7 +52,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_WANTS_EMMC_BOOT := true
 
 # Graphics
-BOARD_EGL_CFG := device/k-touch/u86/prebuilt/system/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/archos/a45pl/prebuilt/system/lib/egl/egl.cfg
 TARGET_QCOM_DISPLAY_VARIANT := legacy
 BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
 USE_OPENGL_RENDERER := true
@@ -112,8 +112,8 @@ TARGET_FORCE_CPU_UPLOAD := true
 
 # Recovery
 #BOARD_TOUCH_RECOVERY := true
-#TARGET_RECOVERY_INITRC := device/k-touch/u86/recovery/init.rc
-TARGET_RECOVERY_FSTAB := device/k-touch/u86/recovery/recovery.fstab
+#TARGET_RECOVERY_INITRC := device/archos/a45pl/recovery/init.rc
+TARGET_RECOVERY_FSTAB := device/archos/a45pl/recovery/recovery.fstab
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/k-touch/u86/recovery/recovery_keys.c
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
@@ -121,7 +121,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storag
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 RECOVERY_FSTAB_VERSION := 2
-TARGET_OTA_ASSERT_DEVICE := u86,U86,w700,msm8625
+TARGET_OTA_ASSERT_DEVICE := u86,U86,w700,msm8625,a45pl
 
 # TWRP
 DEVICE_RESOLUTION := 540x960
